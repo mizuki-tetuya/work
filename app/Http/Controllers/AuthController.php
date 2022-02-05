@@ -9,19 +9,19 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    public function getResister()
+    public function getRegister()
     {
-        return view('resister');
+        return view('register');
     }
 
-    public function postResister(Request $request)
+    public function postRegister(Request $request)
     {
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
-        return view('login');
+        return redirect('/login');
     }
 
     public function getLogin()
@@ -33,8 +33,9 @@ class AuthController extends Controller
     {
         $email = $request->email;
         $password = $request->password;
-        if(Auth::attempt(['email'=>$email, 'password'=>$password])) {
-            return view('attendance');
+
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            return redirect('/');
         } else {
             return back();
         }
@@ -45,6 +46,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+
+        return redirect('/login');
     }
 }
