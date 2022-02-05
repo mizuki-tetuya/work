@@ -253,6 +253,12 @@ th {
           <th>勤務時間</th>
         </tr>
         <tr>
+          <td>{{Auth::user()->name}}</td>
+          <td>{{Carbon::now()}}</td>
+          <td>{{Carbon::now()}}</td>
+          <td></td>
+        </tr>
+        <tr>
           <td>テスト太郎</td>
           <td>10:00:00</td>
           <td>20:00:00</td>

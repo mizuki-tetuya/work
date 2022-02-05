@@ -138,6 +138,12 @@ a {
 li:not(:last-child) {
   margin-right: 50px;
 }
+.logout {
+  border: none;
+  background-color: white;
+  font-weight: bold;
+  font-size:15px;
+}
 
 main {
   background-color: #EEEEEE;
@@ -195,7 +201,7 @@ main {
           <li><a href="#">日付一覧</a></li>
           <li><form action="/logout" method="post">
             @csrf
-            <button type="submit">ログアウト</button>
+            <button type="submit" class=logout>ログアウト</button>
           </form></li>
         </ul>
       </div>

@@ -185,17 +185,18 @@ a {
     <h2 class="login_logo">Atte</h2>
   </header>
   <main>
-    <form action="/login" method="post">
-      @csrf
+    <div class="login_card">
       <div class="login_title">ログイン</div>
-      <div class="login_mail"><input type="text" placeholder="メールアドレス" name="email"></div>
-      <div class="login_password"><input type="text" placeholder="パスワード" name="password"></div>
-      <div class="login_btn"><button type="submit">ログイン</button></div>
-      <div class="login_content">
+      <form action="/login" method="post">
+        @csrf
+        <div class="login_mail"><input type="text" placeholder="メールアドレス" name="email"></div>
+        <div class="login_password"><input type="text" placeholder="パスワード" name="password"></div>
+        <div class="login_btn"><button type="submit">ログイン</button></div>
+        <div class="login_content">
         <div class="login_content1">アカウントをお持ちでない方はこちらから</div>
         <div class="login_content2"><a href="/register">会員登録</a></div>
-      </div>
-</form>
+      </form>
+    </div>
   </main>
   <footer>
     <div class="login_inc">Atte,inc.</div>

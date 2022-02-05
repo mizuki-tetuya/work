@@ -34,7 +34,7 @@ class AuthController extends Controller
         $email = $request->email;
         $password = $request->password;
         if(Auth::attempt(['email'=>$email, 'password'=>$password])) {
-            return view('date');
+            return view('attendance');
         } else {
             return back();
         }
