@@ -13,7 +13,7 @@ class Attendance extends Model
 
     public function user()
     {
-        return $this->belongTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function rests()
